@@ -41,27 +41,26 @@ Visually Appealing Star Chart: A dynamic star visualization to represent core nu
 
 ##Technologies Used 🛠
 
-HTML5: For the structure of the web pages.
-CSS3: For styling and responsive design, including a custom color palette and modern UI elements.
-JavaScript: For numerology calculations, dynamic content generation, and user interaction.
-Google Analytics: Integrated for tracking website performance (optional, can be removed if not desired).
-Installation
+*HTML5*: For the structure of the web pages.
+*CSS3*: For styling and responsive design, including a custom color palette and modern UI elements.
+*JavaScript*: For numerology calculations, dynamic content generation, and user interaction.
+*Google Analytics*: Integrated for tracking website performance (optional, can be removed if not desired).
+*Installation*
 To get a local copy up and running, follow these simple steps:
 
 Clone the repository:
 Bash
-
 git clone https://github.com/janhavi7276/cosmicdigits.git
 
 #Usage
 
-Simply open the index.html file in your web browser.
-Enter your Full Name: Type your first, middle, and last name into the "Full name" field.
-Enter your Birth Date: Select the month and enter the day and year of your birth.
-The numerology readings will automatically update as you input your information.
-To calculate Personal Year, Month, and Day numbers, open perso-ymd.html.
+1.Simply open the index.html file in your web browser.
+2.Enter your Full Name: Type your first, middle, and last name into the "Full name" field.
+3.Enter your Birth Date: Select the month and enter the day and year of your birth.
+4.The numerology readings will automatically update as you input your information.
+5.To calculate Personal Year, Month, and Day numbers, open perso-ymd.html.
 Numerology Concepts
-The application is based on fundamental numerology principles to provide insights into an individual's life path and personality.
+6.The application is based on fundamental numerology principles to provide insights into an individual's life path and personality.
 
 Character: Represents your public and social qualities.
 Soul Urge: Reflects your intuitive and soulful self.

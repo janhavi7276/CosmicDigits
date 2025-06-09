@@ -1,0 +1,907 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 30px;
+  font-size: 1.2em;
+  font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif; /* Modern font stack */
+  color: #333333; /* Softer dark grey text */
+  background-image: url(bg.gif);
+  background-color: #f5f5f5; /* Fallback background color */
+  line-height: 1.6; /* Improved readability */
+}
+
+body > div {
+  margin-bottom: 20px;
+}
+
+/* --- Links --- */
+a {
+  text-decoration: none;
+  border-bottom: 1px solid #2196f3; /* More vibrant blue for links */
+  color: #333333; /* Consistent text color */
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+a:hover {
+  background-color: rgba(33, 150, 243, 0.08); /* Very light, transparent blue hover */
+  border-bottom-color: #1976d2; /* Slightly darker blue on hover */
+  color: #1a237e; /* Darker blue on hover for better contrast */
+}
+
+/* --- Headings --- */
+h1 {
+  margin: 10px 0 40px;
+  color: #ffffff; /* White text for header */
+  background: linear-gradient(135deg, #3F51B5, #1A237E); /* Deeper blue gradient */
+  padding: 40px 20px 20px; /* Consistent padding */
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Subtle text shadow */
+}
+
+h1 > span {
+  font-weight: 300;
+  font-size: 0.6em;
+  white-space: nowrap;
+  display: block; /* Ensures it's on a new line */
+  color: rgba(255, 255, 255, 0.8); /* Slightly transparent white for sub-title */
+  margin-top: 5px;
+}
+
+h2 {
+  margin: 12px 0 5px;
+  font-size: 1.8em; /* Slightly larger for prominence */
+  color: #1A237E; /* Deep blue for section headings */
+  padding-bottom: 5px;
+  border-bottom: 1px solid #bbdefb; /* Light blue underline */
+}
+
+h2 > span {
+  font-weight: normal;
+  font-size: 0.8em; /* Adjusted relative size */
+  color: #424242; /* Softer dark grey for sub-heading */
+}
+
+/* --- Labels & Inputs --- */
+label {
+  color: #424242; /* Softer dark grey for labels */
+  display: block;
+  margin-bottom: 8px; /* More space below labels */
+  font-size: 0.95em; /* Slightly larger labels */
+  font-weight: 600; /* Bolder labels */
+}
+
+/* General input/select styling (overridden by .inputForm where applicable) */
+input,
+select {
+  padding: 12px 10px; /* Adjusted padding for a more comfortable size */
+  font-size: 1em; /* Consistent font size */
+  line-height: normal; /* Reset line-height */
+  font-family: 'Segoe UI', 'Roboto', sans-serif;
+  background-color: #fcfcfc; /* Very light off-white background */
+  border: 1px solid #d1d1d1; /* Softer grey border */
+  border-radius: 8px; /* Nicely rounded corners */
+  color: #333333; /* Darker text inside inputs */
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05); /* Subtle inner shadow */
+  transition: all 0.3s ease;
+}
+
+input:focus,
+select:focus {
+  border-color: #007bff; /* Consistent blue focus highlight */
+  box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.2); /* Softer focus halo */
+  background-color: #ffffff; /* White background on focus */
+  outline: none;
+}
+
+/* --- Articles & Sections --- */
+article {
+  margin: 0 0 25px 0; /* More margin */
+  padding: 30px; /* Consistent padding */
+  background: #ffffff; /* White background for articles */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Subtle shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+article:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+section {
+  position: relative;
+  background-color: #E3F2FD; /* Light, soft blue background */
+  margin-bottom: 30px; /* More margin below sections */
+  padding: 30px; /* Consistent padding */
+  border: 1px solid #BBDEFB; /* Light blue border */
+  border-radius: 15px; /* Softer rounded corners */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Very subtle shadow */
+}
+
+/* --- Specific Input Adjustments --- */
+#day { /* These will be overridden by .inputForm .field.bdate input#day */
+  /* Keep default styles for now if not part of .inputForm */
+}
+
+#year { /* These will be overridden by .inputForm .field.bdate input#year */
+  /* Keep default styles for now if not part of .inputForm */
+}
+
+.name > input {
+  width: 100%; /* For full-width name input */
+}
+
+.spaced {
+  margin: 0 10px;
+}
+
+.linespace > li {
+  margin: 10px 0; /* More vertical space */
+}
+
+.linespace > li > a {
+  font-weight: 600;
+  color: #007bff; /* Use primary blue for these links */
+  border-bottom: 1px solid rgba(0, 123, 255, 0.5); /* Semi-transparent blue border */
+}
+
+.linespace > li > a:hover {
+  color: #0056b3; /* Darker blue on hover */
+  background-color: transparent; /* No background hover for this type of link */
+  border-bottom-color: #0056b3;
+}
+
+.field {
+  margin: 25px 0; /* Adjusted margin for consistency */
+}
+
+/* --- Input Form Section (Re-integrated from previous improvements) --- */
+.inputForm {
+  background: #ffffff;
+  padding: 35px;
+  border-radius: 15px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 35px;
+  margin-bottom: 60px;
+  border: 1px solid #e8e8e8;
+  z-index: 300; /* Keep z-index */
+  min-height: 190px; /* Keep min-height */
+}
+
+.inputForm .ml210 {
+  flex-grow: 1;
+  min-width: 320px;
+}
+
+.inputForm .field {
+  margin-bottom: 25px; /* Consistent margin between fields */
+}
+
+.inputForm label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #333;
+  font-size: 1.05em;
+}
+
+/* Input styles specific to .inputForm, overriding general ones */
+.inputForm input[type="text"],
+.inputForm input[type="number"],
+.inputForm select {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #d1d1d1;
+  border-radius: 8px;
+  font-size: 1.05em;
+  color: #333;
+  background-color: #fcfcfc;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.inputForm input[type="text"]:focus,
+.inputForm input[type="number"]:focus,
+.inputForm select:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.2);
+  background-color: #ffffff;
+  outline: none;
+}
+
+.inputForm .grey {
+  color: #777777; /* Softer grey for hint text */
+  font-size: 0.88em;
+  margin-top: 5px;
+  display: block;
+}
+
+/* Improved Date Input CSS */
+.inputForm .field.bdate {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.inputForm .field.bdate select#month {
+  flex: 2;
+  min-width: 110px;
+  max-width: 160px;
+}
+
+.inputForm .field.bdate input#day {
+  flex: 1;
+  max-width: 70px;
+  text-align: center;
+  -moz-appearance: textfield;
+}
+
+.inputForm .field.bdate input#day::-webkit-outer-spin-button,
+.inputForm .field.bdate input#day::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.inputForm .field.bdate input#year {
+  flex: 1.5;
+  max-width: 100px;
+  text-align: center;
+  -moz-appearance: textfield;
+}
+
+.inputForm .field.bdate input#year::-webkit-outer-spin-button,
+.inputForm .field.bdate input#year::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+.desc {
+  display: inline-block;
+  margin: 10px 0 16px;
+  color: #777777; /* Softer grey */
+}
+
+.calc {
+  display: block;
+  margin: 10px 0;
+}
+
+.calc > .meaning {
+  margin: 15px 0 20px -10px;
+  color: #333333; /* Darker text */
+  border-left: none; /* No border-left here */
+  min-height: 50px;
+}
+
+.meaning {
+  position: relative;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.meaning > div {
+  padding: 0 0 0 100px;
+}
+
+.meaning > .num {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  font-size: 35px;
+  border: 4px solid #BBDEFB; /* Light blue border */
+  line-height: 42px;
+  height: 42px;
+  width: 42px;
+  padding: 5px;
+  margin-right: 10px;
+  border-radius: 50%;
+  background-color: #fcfcfc; /* Off-white background */
+  text-align: center;
+  color: #1A237E; /* Dark blue for number */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.num {
+  display: inline-block;
+  border: 4px solid #BBDEFB; /* Light blue border */
+  background-color: #fcfcfc; /* Off-white background */
+  line-height: 24px;
+  height: 24px;
+  width: 24px;
+  text-align: center;
+  border-radius: 50%;
+  color: #1A237E; /* Dark blue for number */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08); /* Subtle shadow */
+}
+
+.fl {
+  float: left;
+  margin: 10px 30px;
+}
+
+.fl > a {
+  border-bottom: none;
+}
+
+.fl img {
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Add shadow to images */
+  transition: transform 0.3s ease;
+}
+
+.fl img:hover {
+  transform: translateY(-3px); /* Lift on hover */
+}
+
+.clearer {
+  clear: both;
+  height: 0;
+  width: 0;
+}
+
+/* --- Language Selector --- */
+.i18n {
+  
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    padding: 8px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+ /* Subtle shadow */
+}
+
+.i18n > img {
+  cursor: pointer;
+  margin-left: 8px; /* More space between flags */
+  height: 18px; /* Larger flags */
+  width: 24px;
+  border: 1px solid #bbdefb; /* Light blue border */
+  border-radius: 3px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.i18n > img:hover {
+  transform: scale(1.2); /* Slightly larger scale on hover */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.artnum {
+  border-left: 10px solid #BBDEFB; /* Light blue left border */
+}
+
+.ml210 {
+  margin: 0 20px 0 260px;
+}
+
+#allNumbers {
+  margin: 0 0 20px 0;
+}
+
+#allNumbers > span {
+  padding: 5px;
+  display: inline-block;
+  height: 24px;
+  width: 24px;
+  margin-right: 10px;
+  border-radius: 50%; /* Ensure these are circles */
+  background-color: #fcfcfc;
+  border: 4px solid #BBDEFB; /* Default light blue border */
+  color: #1A237E; /* Dark blue text for numbers */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+/* Numerology Colors (kept as is, assumed to be meaningful) */
+.c1, .c10, .c19, .c28 { border-color: #f44336 !important; }
+.c2, .c20 { border-color: #ff9800 !important; }
+.c3, .c12, .c21, .c30 { border-color: #ffeb3b !important; }
+.c4, .c13, .c31 { border-color: #4caf50 !important; }
+.c5, .c14, .c23 { border-color: #48d1cc !important; }
+.c6, .c15, .c24 { border-color: #2196f3 !important; }
+.c7, .c16, .c25 { border-color: #6a0dad !important; }
+.c8, .c17, .c26 { border-color: #d000d0 !important; }
+.c9, .c18, .c27 { border-color: #ffc107 !important; }
+.c11, .c29 { border-color: #9c27b0 !important; }
+.c22 { border-color: #3f51b5 !important; }
+
+.k1, .k10, .k19, .k28 { border-bottom-color: #f44336 !important; }
+.k2, .k20 { border-bottom-color: #ff9800 !important; }
+.k3, .k12, .k21, .k30 { border-bottom-color: #ffeb3b !important; }
+.k4, .k13, .k31 { border-bottom-color: #4caf50 !important; }
+.k5, .k14, .k23 { border-bottom-color: #48d1cc !important; }
+.k6, .k15, .k24 { border-bottom-color: #2196f3 !important; }
+.k7, .k16, .k25 { border-bottom-color: #6a0dad !important; }
+.k8, .k17, .k26 { border-bottom-color: #d000d0 !important; }
+.k9, .k18, .k27 { border-bottom-color: #ffc107 !important; }
+.k11, .k29 { border-bottom-color: #9c27b0 !important; }
+.k22 { border-bottom-color: #3f51b5 !important; }
+
+.copy {
+  margin: 50px 0 20px;
+  color: #777777; /* Softer grey */
+  font-size: 0.8em;
+}
+
+.grey {
+  color: #777777; /* Softer grey */
+}
+
+#sally {
+  display: none; /* Keep hidden as per original */
+}
+
+#sally li {
+  margin-bottom: 10px;
+}
+
+.fullStar {
+  position: relative; /* Changed from absolute to relative for better flow with inputForm */
+  min-height: 220px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px; /* Add some top margin */
+}
+
+#star-holder {
+  z-index: 200;
+  padding: 20px;
+  /* Removed absolute positioning for better flow */
+  height: 240px;
+  width: 240px;
+  position: relative; /* Use relative to position child numbers */
+}
+
+#star-holder .num {
+  position: absolute;
+  padding: 4px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+#star-holder .num > span {
+  display: block;
+  opacity: 0;
+  position: relative;
+  top: 17px;
+  left: -34px;
+  width: 100px;
+  z-index: 100;
+  font-size: 0.9rem;
+  transition: opacity 0.3s ease 0.1s;
+  background-color: rgba(255, 255, 255, 0.95); /* Light background for tooltip */
+  padding: 5px 8px;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  color: #333333;
+  border: 1px solid #ddd;
+}
+
+#star-holder .num:hover > span {
+  opacity: 1;
+}
+
+#star-holder .character {
+    top: 0px;
+    left: 100px;
+}
+
+#star-holder .character > span {
+  left: 12px;
+  top: 0;
+}
+
+#star-holder .soul {
+  top: 66px;
+  left: 9px;
+}
+
+#star-holder .agenda {
+    top: 66px;
+    left: 200px;
+}
+
+#star-holder .agenda > span {
+  top: 22px;
+  left: -28px;
+}
+
+#star-holder .attitude {
+    top: 177px;
+    left: 165px;
+}
+
+#star-holder .personality {
+  top: 177px;
+  left: 44px;
+}
+
+#star-holder .destiny {
+    top: 95px;
+    left: 104px;
+}
+
+#star-holder .destiny > span {
+  left: 28px;
+  top: 0;
+}
+
+#star-holder .purpose {
+  display: none;
+}
+
+.star > div {
+  z-index: 110;
+  width: 0;
+  height: 0;
+  border-left: 23px solid transparent;
+  border-right: 23px solid transparent;
+  border-bottom: 64px solid #90CAF9; /* Lighter blue for star triangles */
+}
+
+.t0 {
+  position: absolute;
+  display: inline-block;
+  border-radius: 50%;
+  border: 39px solid #90CAF9; /* Lighter blue for inner circle */
+  top: 81px;
+  left: 86px;
+  background-color: #90CAF9;
+}
+
+.t1, .t2, .t3, .t4, .t5 {
+  position: absolute;
+}
+
+.t1 {
+  top: 24px;
+  left: 102px;
+}
+
+.t2 {
+  transform: rotate(72deg);
+  top: 68px;
+  left: 163px;
+}
+
+.t3 {
+  transform: rotate(144deg);
+  top: 139px;
+  left: 140px;
+}
+
+.t4 {
+  transform: rotate(-144deg);
+  top: 139px;
+  left: 64px;
+}
+
+.t5 {
+  transform: rotate(-72deg);
+  top: 68px;
+  left: 41px;
+}
+
+.rpt-perso .num {
+  padding: 4px;
+}
+
+/* --- Responsive Adjustments --- */
+@media only screen and (max-width: 670px) {
+  body {
+    margin: 20px 10px; /* Reduced margin for smaller screens */
+  }
+
+  h1 {
+    font-size: 2.5em; /* Adjusted header font size */
+    padding: 30px 15px 15px;
+  }
+
+  h1 > span {
+    font-size: 0.7em;
+  }
+
+  section {
+    padding: 20px 15px;
+  }
+
+  .ml210 {
+    margin-left: 10px;
+    margin-right: 10px; /* Adjust right margin for consistency */
+  }
+
+  .fullStar {
+    position: relative; /* Ensure it stays in flow */
+    margin-top: 30px; /* More space above star */
+  }
+
+  .inputForm {
+    flex-direction: column; /* Stack elements vertically on small screens */
+    align-items: stretch; /* Stretch to full width */
+    padding: 25px;
+    gap: 20px;
+  }
+
+  .inputForm .ml210 {
+    min-width: unset; /* Remove min-width constraint */
+    width: 100%; /* Take full width */
+    margin: 0; /* Remove horizontal margin */
+  }
+
+  .inputForm .field.bdate {
+    flex-wrap: wrap; /* Allow date fields to wrap if space is too tight */
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .inputForm .field.bdate select#month,
+  .inputForm .field.bdate input#day,
+  .inputForm .field.bdate input#year {
+    max-width: 100%; /* Allow them to take full width on small screens */
+    flex: 1 1 auto; /* Allow flexible growth and shrinking */
+  }
+
+
+  .meaning > .num {
+    left: -5px; /* Adjust position */
+    font-size: 30px; /* Smaller number */
+    height: 38px;
+    width: 38px;
+    line-height: 38px;
+  }
+
+  .meaning > div {
+    padding-left: 55px; /* Adjust text padding */
+  }
+
+  .fl {
+    margin: 10px 0; /* Adjust margin for floated elements */
+    float: none; /* Prevent floating to allow stacking */
+    display: block; /* Make it a block element */
+    text-align: center; /* Center content */
+  }
+
+  .fl img {
+      margin-bottom: 10px; /* Space below image if stacked */
+  }
+
+  .i18n {
+    top: 40px;
+    right: 40px;
+    padding: 5px;
+  }
+
+  .i18n > img {
+    height: 14px;
+    width: 20px;
+    margin-left: 5px;
+  }
+}
+
+/* --- Print Styles --- */
+@media print {
+  @page {
+    margin: 1cm 1cm;
+  }
+
+  #sally,
+  article {
+    page-break-inside: avoid;
+    margin-bottom: 40px;
+  }
+
+  a[href^="http"]::after {
+    font-weight: 500;
+    content: " (" attr(href) ") ";
+  }
+
+  .num > span,
+  .field > label > span.grey {
+    display: none !important;
+  }
+
+  section {
+    border: none;
+    border-bottom: 2px solid silver;
+  }
+}
+
+/* --- Hover Effects --- */
+#report1 > article .num,
+#report2 > article .num,
+#report3 > article .num,
+#allNumbers > span {
+  transition: transform 0.3s ease, border-color 0.3s ease; /* Smooth transitions */
+}
+
+#report1 > article:hover .num,
+#report2 > article:hover .num,
+#report3 > article:hover .num,
+#allNumbers > span:hover {
+  transform: scale(1.3); /* Slightly less aggressive scale */
+  border-color: #1A237E !important; /* Darker blue on hover */
+}
+
+.sally {
+  height: 206px;
+  width: 195px;
+}
+
+/* --- Footer --- */
+.site-footer {
+  background: linear-gradient(135deg, #1A237E, #3F51B5); /* Deep blues from new palette */
+  color: #f0f0f0;
+  position: relative;
+  padding-top: 80px;
+  margin-top: 60px; /* Space above footer */
+  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+}
+
+.footer-wave {
+  position: absolute;
+  top: -20px;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: url('wave.svg') repeat-x;
+  animation: waveAnim 8s linear infinite;
+}
+
+@keyframes waveAnim {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: 800px;
+  }
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 30px;
+  gap: 40px;
+}
+
+.footer-about h3 {
+  font-size: 1.6em;
+  margin-bottom: 10px;
+  color: #FFC107; /* Vibrant Amber accent */
+}
+
+.footer-about p {
+  font-size: 0.95em;
+  line-height: 1.5;
+}
+
+.footer-about a {
+  color: #FFC107; /* Vibrant Amber accent */
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.footer-about a:hover {
+  color: #FFD740; /* Lighter amber on hover */
+}
+
+.footer-links h3 {
+  font-size: 1.4em;
+  margin-bottom: 15px;
+  color: #FFC107; /* Vibrant Amber accent */
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin: 8px 0;
+}
+
+.footer-links a {
+  color: #f0f0f0;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #FFC107; /* Vibrant Amber accent on hover */
+}
+
+.footer-cta h3 {
+  font-size: 1.4em;
+  margin-bottom: 15px;
+  color: #FFC107; /* Vibrant Amber accent */
+}
+
+.subscribe-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.subscribe-form input {
+  flex: 1;
+  padding: 12px; /* Consistent padding */
+  border: none;
+  border-radius: 6px; /* Slightly rounded */
+  color: #333;
+}
+
+.subscribe-form button {
+  padding: 12px 22px; /* Consistent padding */
+  background: #FFC107; /* Amber button */
+  color: #1A237E; /* Deep blue text on button */
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600; /* Bolder text */
+  transition: background 0.3s, transform 0.2s;
+}
+
+.subscribe-form button:hover {
+  background: #FFD740; /* Lighter amber on hover */
+  transform: translateY(-2px); /* Subtle lift */
+}
+
+.social-icons a {
+  margin-right: 18px; /* More space */
+  font-size: 1.5em; /* Larger icons */
+  color: #f0f0f0;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.social-icons a:hover {
+  color: #FFC107; /* Vibrant Amber accent on hover */
+  transform: scale(1.15); /* More pronounced scale */
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(240, 240, 240, 0.2); /* Softer border */
+  text-align: center;
+  padding: 20px 30px;
+  font-size: 0.9em;
+}
+
+.footer-bottom .evo-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-bottom a {
+  color: #FFC107; /* Vibrant Amber accent */
+  transition: color 0.3s;
+}
+
+.footer-bottom a:hover {
+  color: #fff;
+}
+
+.evo-footer .heart {
+  font-size: 1.2em;
+  color: #e74c3c;
+  animation: heartbeat 1s infinite ease-in-out;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+  .footer-wave {
+    height: 40px;
+  }
+  .footer-container {
+    padding: 0 20px;
+    gap: 30px;
+  }
+}

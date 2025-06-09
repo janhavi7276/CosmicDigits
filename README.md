@@ -48,7 +48,7 @@ To get a local copy up and running, follow these simple steps:
 Clone the repository:
 Bash
 
-git clone https://github.com/your-username/cosmicdigits.git
+git clone https://github.com/janhavi7276/cosmicdigits.git
 (Note: Replace your-username with the actual GitHub username if the repository is public.)
 Navigate to the project directory:
 Bash

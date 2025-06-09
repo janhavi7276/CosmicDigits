@@ -5,24 +5,25 @@
 The project is developed by Janhavi Sonawane.
 
 ##Table of Contents
-    Features
-    Technologies Used
-    Installation
-    Usage
-    Numerology Concepts
-    Contributing
-    License
-    Contact
+    -Features
+    -Technologies Used
+    -Usage
+    -Numerology Concepts
+    -Contributing
+    -License
+   
+
+    
 ##Features✨
 
 Comprehensive Numerology Readings: Calculate and get interpretations for:
-    Character
-    Soul Urge
-    Hidden Agenda
-    Destiny
-    Personality
-    Attitude
-    Divine Purpose
+   - Character
+   - Soul Urge
+   - Hidden Agenda
+   - Destiny
+   - Personality
+   - Attitude
+   - Divine Purpose
 
 
 Personal Year, Month, Day Calculator: Determine your personal numbers for specific periods.
@@ -35,7 +36,9 @@ Multilingual Support: Available in multiple languages, including English, Spanis
 Responsive Design: Optimized for various screen sizes, from desktops to mobile devices.
 
 
-Visually Appealing Star Chart: A dynamic star visualization to represent core numerology numbers.
+Visually Appealing Star Chart: A dynamic star visualization to represent core numerology numbers.'
+
+
 ##Technologies Used 🛠
 
 HTML5: For the structure of the web pages.
@@ -49,14 +52,10 @@ Clone the repository:
 Bash
 
 git clone https://github.com/janhavi7276/cosmicdigits.git
-(Note: Replace your-username with the actual GitHub username if the repository is public.)
-Navigate to the project directory:
-Bash
 
-cd cosmicdigits
-Usage
+#Usage
+
 Simply open the index.html file in your web browser.
-
 Enter your Full Name: Type your first, middle, and last name into the "Full name" field.
 Enter your Birth Date: Select the month and enter the day and year of your birth.
 The numerology readings will automatically update as you input your information.
